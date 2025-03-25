@@ -104,10 +104,10 @@ router.delete('/tasks/:id', auth, async(req, res) => {
 
         if(!task){
             //if the entered id does not exist
-            res.status(404).send()
+            return res.status(404).send()
         }
 
-        res.send(task)
+        return res.send(task)
     }catch(e){
         //in case of invalid task id
         res.status(400).send(e)
